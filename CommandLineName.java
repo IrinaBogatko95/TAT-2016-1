@@ -1,5 +1,7 @@
 
-
+    /**
+     * Class has a method that displays name which input from command line
+     */
 public class CommandLineName {
     /**
      * Output name from command line
