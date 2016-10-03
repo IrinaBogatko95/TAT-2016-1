@@ -1,6 +1,7 @@
-/**
- * * Class accepts two numbers from the command line, counting sum, difference, composition and quotient
- */
+
+    /**
+     * Class accepts two numbers from the command line, counting sum, difference, composition and quotient
+     */
 public class Calculator {
     /**
      * Output on the screen sum, difference, composition and quotient of two numbers
@@ -35,27 +36,27 @@ public class Calculator {
             }
         }
 }
-        /**
-         *  Sum of two numbers
-         */
+     /**
+     *  Sum of two numbers
+     */
         public static double calculateSum(double a, double b){
             return a + b;
         }
-        /**
-         * Difference of two numbers
-         */
+     /**
+     * Difference of two numbers
+     */
         public static double calculateDifference(double a, double b){
             return a - b;
         }
-        /**
-         * Composition of two numbers
-         */
+     /**
+     * Composition of two numbers
+     */
         public static double calculateComposition(double a, double b){
             return a * b;
         }
-        /**
-         * Quotient of two numbers
-         */
+     /**
+     * Quotient of two numbers
+     */
         public static double calculateQuotient(double a, double b){
             return a / b;
         }
