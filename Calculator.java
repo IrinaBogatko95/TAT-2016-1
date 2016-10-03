@@ -1,7 +1,6 @@
-
-    /**
-     * Class accepts two numbers from the command line, counting sum, difference, composition and quotient
-     */
+/**
+ * * Class accepts two numbers from the command line, counting sum, difference, composition and quotient
+ */
 public class Calculator {
     /**
      * Output on the screen sum, difference, composition and quotient of two numbers
