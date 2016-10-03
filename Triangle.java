@@ -1,3 +1,4 @@
+package Task_4;
 import java.util.Scanner;
 /**
  * Output on the screen whether the  triangle equilateral, isosceles or the usual.
