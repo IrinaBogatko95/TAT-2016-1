@@ -1,6 +1,6 @@
-/**
- * Class has a method that displays elements of the array in reverse order
- */
+    /**
+     * Class has a method that displays elements of the array in reverse order
+     */
 public class CommandLineParams  {
     /**
      * Output of the array elements in the reverse order
