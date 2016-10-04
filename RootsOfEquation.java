@@ -7,16 +7,18 @@ import java.util.Scanner;
  * @since 04-10-2016
  */
 public class RootsOfEquation {
+
     /**
      * Output roots of the quadratic equation ax2 + bx + c = 0
      * @param args command-line arguments
      */
     public static void main(String[] args) {
         double[] coeff = new double[3];
-        entry(coeff);
+        getInputs(coeff);
         System.out.println("Your equation: (" + coeff[0] + ") * x ^ 2" + " + (" + coeff[1] + ") * x " + " + (" + coeff[2] + ")");
         roots(coeff);
     }
+
     /**
      * Counting discriminant and finding the roots of the equation
      * @param coeff array with input values(a, b, c)
@@ -26,12 +28,12 @@ public class RootsOfEquation {
         double x1;
         double x2;
         double d = Math.pow(coeff[1], 2) - 4  * coeff[0] * coeff[2];
-        if ( d < 0) {
-            System.out.println("D < 0, the equation does not have roots");
-        } else if (zero(d)) {
+        if (zero(d)) {
             x1 = (- coeff[1] /(2 * coeff[0]));
             System.out.println("D = 0, the equation have one root");
             System.out.println("x = " + x1);
+        } else if ( d < 0) {
+            System.out.println("D < 0, the equation does not have roots");
         } else if( d > 0 ) {
             x1 = (-coeff[1] + Math.sqrt(d)) / (2 * coeff[0]);
             x2 = (-coeff[1] - Math.sqrt(d)) / (2 * coeff[0]);
@@ -40,30 +42,41 @@ public class RootsOfEquation {
             System.out.println("x2 = " + x2);
         }
     }
+
     /**
      * Method return true if "a" equal to zero
      * @param a number to check the vanishing
      */
     private static boolean zero (double a) {
-        if(Double.isNaN(1. / a)) {
-            return true;
-        } else {
-            return false;
-        }
+        return Double.isNaN(0/a);
     }
+
+    /**
+     * Method return true if "a" equal to infinite
+     * @param a number to check the vanishing
+     */
+    private static boolean infinite (double a) {
+        return Double.isInfinite(a);
+    }
+
     /**
      * expects the entering of values from the user, returns this values
      * @param coeff array of input values
      */
-    public static double[] entry(double[] coeff) {
+    public static double[] getInputs(double[] coeff) {
         Scanner sc = new Scanner(System.in);
         try {
             for(int i=0; i < coeff.length; i++) {
                 System.out.println("Enter " + (i + 1) + " coeff:");
                 coeff[i] = sc.nextDouble();
             }
-            if(coeff[0]==0) {
-                System.out.println("The coefficient at the first term can not equal zero. Try again.");
+            if(zero(coeff[0])){
+                System.out.println("The coefficient at the first term can not be equal zero. Try again.");
+                System.exit(1);
+            }
+            else if(infinite(coeff[0])|| infinite(coeff[1]) || infinite(coeff[2])) {
+                System.out.println("The coefficient  can not be equal infinity. Try again.");
+                System.exit(1);
             }
         } catch(Exception ex) {
             System.out.println("You entered not a number. Please, enter number");
