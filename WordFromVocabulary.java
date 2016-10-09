@@ -2,7 +2,6 @@ package task_7;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 /**
  * Class consists of method, which checks, that parameters contains words from vocabulary
  */
