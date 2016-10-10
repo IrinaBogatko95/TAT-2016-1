@@ -8,16 +8,14 @@ public class NoFigures extends RulesBuilder {
 
     /**
      * Checks for compliance with the rule
+     *
      * @param words entered string
      */
     public boolean check(String words) {
         Pattern pattern = Pattern.compile("\\d+");
         Matcher matcher = pattern.matcher(words);
-        if (matcher.find()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !matcher.find();
+
     }
 
     /**

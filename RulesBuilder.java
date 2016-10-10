@@ -6,6 +6,7 @@ public abstract class RulesBuilder {
 
     /**
      * Checks for compliance with the rule
+     *
      * @param param entered string
      */
     public abstract boolean check(String param);

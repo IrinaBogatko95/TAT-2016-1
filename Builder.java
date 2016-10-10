@@ -14,7 +14,6 @@ public class Builder {
         allRules.add(new OnlyFigures());
         allRules.add(new MoreFiveWords());
         allRules.add(new WordFromVocabulary());
-        allRules.add(new NoRules());
         return allRules;
     }
 
@@ -25,10 +24,15 @@ public class Builder {
      * @param enteredString entered string
      */
     public static void checkToRules(ArrayList<RulesBuilder> allRules, String enteredString) {
+        int count = 0;
         for (RulesBuilder rule : allRules) {
             if (rule.check(enteredString)) {
                 rule.print();
+                count++;
             }
+        }
+        if(count == 0){
+            System.out.println("The string doesn't contains some rules!");
         }
     }
 }

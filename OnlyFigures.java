@@ -8,6 +8,7 @@ public class OnlyFigures extends RulesBuilder {
 
     /**
      * Checks for compliance with the rule
+     *
      * @param words entered string
      */
     public boolean check(String words) {

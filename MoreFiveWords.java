@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
  * Class consists of method, which checks, that parameters contains more than five words
  */
 public class MoreFiveWords extends RulesBuilder {
+    final int CONST = 5;
 
     /**
      * Checks for compliance with the rule
@@ -17,10 +18,10 @@ public class MoreFiveWords extends RulesBuilder {
         Matcher matcher = pattern.matcher(words);
         Matcher matcher2 = pattern2.matcher(words);
 
-        while(matcher.find() || matcher2.find()) {
+        while (matcher.find() || matcher2.find()) {
             count++;
         }
-        return  (count + 1 > 5);
+        return  (count + 1 > CONST);
     }
 
     /**

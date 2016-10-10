@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Class includes a method "main" that is the starting point in the program
  * and method "input" which take values from the keyboard
  * @author Irina Bogatko
- * @version 1.0
+ * @version 1.1
  * @since 09-10-2016
  */
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
             ArrayList<RulesBuilder> outputRules = Builder.buildRules();
             Builder.checkToRules(outputRules, enterString);
         } catch (Exception e) {
-            System.out.println("The string doesn't contains some rules!");
+            System.out.println("Error in program! Please, try again!");
         }
     }
 
