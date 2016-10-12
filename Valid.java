@@ -15,7 +15,7 @@ public class Valid {
     /**
      * Method, which make a list of commands
      */
-    public ArrayList<Commands> commandsValidator() {
+    public ArrayList<Commands> commandsBuilder() {
         ArrayList<Commands> allCommands = new ArrayList<>();
         allCommands.add(new CountTypes());
         allCommands.add(new CountAll());
@@ -28,14 +28,14 @@ public class Valid {
      * Method, which input commands
      */
     public String inputCommand() {
-
         String command;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter command: ");
-        command = sc.nextLine();
-        exit(command);
-        return command;
+        do {
+            System.out.println("Enter command: ");
+            command = sc.nextLine();
 
+            return command;
+        } while (!(checkEnteredCommand(command)));
     }
 
     /**
@@ -48,7 +48,6 @@ public class Valid {
     public void checkCommands(ArrayList<Goods> params, ArrayList<Commands> allCommands, String command) {
 
         for (Commands check : allCommands) {
-
             if (check.checkToInput(command)) {
                 check.computing(params);
             }
@@ -60,10 +59,9 @@ public class Valid {
      *
      * @param command entered command
      */
-    private boolean exit(String command) {
+    private boolean checkEnteredCommand(String command) {
         boolean commandTrue = true;
-
-        if (command.equals("exit") || command.equals("Exit") || command.equals("EXIT")) {
+        if (command.equals("exit")) {
             System.out.println("Exit from the command line. Completion of the program. Have a nice day!");
             commandTrue = false;
         }

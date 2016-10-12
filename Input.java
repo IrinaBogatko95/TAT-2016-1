@@ -36,7 +36,7 @@ public class Input {
             products.add(goods);
 
             System.out.println("Would you like add one more product? \n If YES, enter Y , if NO - others symbols");
-            answer = oneMoreGoods();
+            answer = oneMoreEnter();
         }
         return products;
     }
@@ -44,10 +44,9 @@ public class Input {
     /**
      * if entered value equal to Y - return true
      */
-    public boolean oneMoreGoods() {
+    public boolean oneMoreEnter() {
         Scanner scanner = new Scanner(System.in);
         String inputCommand = scanner.nextLine();
         return (inputCommand.equals("y") || inputCommand.equals("Y"));
     }
 }
-

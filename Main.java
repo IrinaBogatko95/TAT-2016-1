@@ -23,7 +23,7 @@ public class Main {
             parameters = input.getInput();
 
             Valid validator = new Valid();
-            ArrayList<Commands> inputCommands = validator.commandsValidator();
+            ArrayList<Commands> inputCommands = validator.commandsBuilder();
             String command = validator.inputCommand();
             validator.checkCommands(parameters, inputCommands, command);
         } catch (Exception e) {
