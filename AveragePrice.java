@@ -18,14 +18,19 @@ public class AveragePrice extends Commands {
      * @param parameters entered information about product
      */
     public void computing(ArrayList<Goods> parameters) {
-        double calc = 0;
+        double price = 0;
         double average = 0;
+        double average_type = 0;
+        double quantity_all = 0;
         double quantity = 0;
         for (Goods count : parameters) {
-            calc += count.getPrice();
-            quantity += count.getQuantity();
-            average = calc / quantity;
+            quantity = count.getQuantity();
+            quantity_all +=quantity;
+            price = count.getPrice();
+            average_type = price*quantity;
+            average +=average_type;
         }
+        average = average/quantity_all;
         print(average);
     }
 

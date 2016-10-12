@@ -30,11 +30,9 @@ public class Valid {
     public String inputCommand() {
         String command;
         Scanner sc = new Scanner(System.in);
-        do {
-            System.out.println("Enter command: ");
-            command = sc.nextLine();
-            return command;
-        } while (!(checkEnteredCommand(command)));
+        System.out.println("Enter command: ");
+        command = sc.nextLine();
+        return command;
     }
 
     /**
@@ -42,13 +40,21 @@ public class Valid {
      *
      * @param params      entered values
      * @param allCommands list of commands
-     * @param command     entered command
      */
-    public void checkCommands(ArrayList<Goods> params, ArrayList<Commands> allCommands, String command) {
+    public void checkCommands(ArrayList<Goods> params, ArrayList<Commands> allCommands) {
 
-        for (Commands check : allCommands) {
-            if (check.checkToInput(command)) {
-                check.computing(params);
+        boolean ifNextCommand = true;
+        int calc = 0;
+        while (ifNextCommand) {
+            String command = inputCommand();
+            for (Commands check : allCommands) {
+                if (check.checkToInput(command)) {
+                    check.computing(params);
+                    calc++;
+                }
+            }
+            if (calc > 0) {
+                ifNextCommand=checkEnteredCommand(command);
             }
         }
     }

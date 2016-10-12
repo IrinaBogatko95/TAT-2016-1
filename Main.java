@@ -1,4 +1,5 @@
 package Task_8;
+
 import java.util.ArrayList;
 
 /**
@@ -18,14 +19,11 @@ public class Main {
     public static void main(String[] args) {
         try {
             ArrayList<Goods> parameters = new ArrayList<>();
-
             Input input = new Input();
             parameters = input.getInput();
-
             Valid validator = new Valid();
             ArrayList<Commands> inputCommands = validator.commandsBuilder();
-            String command = validator.inputCommand();
-            validator.checkCommands(parameters, inputCommands, command);
+            validator.checkCommands(parameters, inputCommands);
         } catch (Exception e) {
             System.out.println("Error in program! Please, try again.");
         }
