@@ -33,7 +33,6 @@ public class Valid {
         do {
             System.out.println("Enter command: ");
             command = sc.nextLine();
-
             return command;
         } while (!(checkEnteredCommand(command)));
     }
