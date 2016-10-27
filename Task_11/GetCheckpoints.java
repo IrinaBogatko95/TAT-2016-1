@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Class, which read checkpoints from file
  * @author Irina Bogatko
- * @version 1.0
+ * @version 1.1
  * @since 26.10.2016
  */
 public class GetCheckpoints {
