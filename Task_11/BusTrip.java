@@ -52,5 +52,4 @@ public class BusTrip extends Trip {
     public void nextCheckpoint(Checkpoint point, Distance distance) {
         distance.nextPoint(point);
     }
-
 }

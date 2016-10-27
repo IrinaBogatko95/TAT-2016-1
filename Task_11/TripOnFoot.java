@@ -44,6 +44,4 @@ public class TripOnFoot extends Trip {
     public void nextCheckpoint(Checkpoint point, Distance distance) {
         distance.nextPoint(point);
     }
-
-
 }
