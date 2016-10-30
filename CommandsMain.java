@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @since 12.10.2016
  */
-public class Main {
+public class CommandsMain {
 
     /**
      * Calls methods that read information from the keyboard and display its processed result
