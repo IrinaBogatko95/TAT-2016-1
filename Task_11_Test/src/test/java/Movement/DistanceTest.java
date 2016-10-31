@@ -2,7 +2,9 @@ package Movement;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class DistanceTest {
@@ -16,7 +18,7 @@ public class DistanceTest {
     }
 
     @Test
-    public void testGetDistance() {
+    public void positiveTestGetDistance() {
         Checkpoint checkpoint1 = new Checkpoint(0.0, 0.0);
         Checkpoint checkpoint2 = new Checkpoint(-2.6, 0.0);
         Checkpoint checkpoint3 = new Checkpoint(100.2, 0.0);
@@ -28,19 +30,19 @@ public class DistanceTest {
         assertEquals(342.0, distance.getDistance(checkpoints), 0.01);
     }
 
-    @Test
-    public void testGetDistanceNotNegative() {
-        Checkpoint checkpoint1 = new Checkpoint(0.0, 0);
-        Checkpoint checkpoint2 = new Checkpoint(-100.0, 0);
-        Checkpoint checkpoint3 = new Checkpoint(-40.0, 0);
+    @Test(expected = Exception.class)
+    public void negativeTestGetDistanceWithException() {
+        Checkpoint checkpoint1 = new Checkpoint(0.0, 0.0);
+        Checkpoint checkpoint2 = new Checkpoint(2.6, 0.0);
+        Checkpoint checkpoint3 = new Checkpoint(0.0, 0.0);
         checkpoints.add(checkpoint1);
         checkpoints.add(checkpoint2);
         checkpoints.add(checkpoint3);
-        assertNotEquals(-60, distance.getDistance(checkpoints));
+        assertEquals(2.6, distance.getDistance(checkpoints), 0.01);
     }
 
     @Test
-    public void testDistanceBetweenCheckpoints() {
+    public void positiveTestDistanceBetweenCheckpoints() {
         Checkpoint checkpoint1 = new Checkpoint(0.0, 0.0);
         Checkpoint checkpoint2 = new Checkpoint(-2.6, 0.2);
         double allDistance = distance.distanceBetweenCheckpoints(checkpoint1, checkpoint2);
