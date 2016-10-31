@@ -21,15 +21,17 @@ public class BusTrip extends Trip {
     private int passengers = 40;
 
     /**
-     * Returns name of bus
+     * Method get name of the bus
+     * @return name of the bus
      */
     public String getName() {
         return NAME;
     }
 
     /**
-     * Returns time of trip on bus
+     * Method count time of trip by bus
      * @param checkpoints list of all checkpoints of trip
+     * @return time of trip by bus
      */
     public double getTripTime(ArrayList<Checkpoint> checkpoints) {
         Distance distance = new Distance();
@@ -38,8 +40,9 @@ public class BusTrip extends Trip {
     }
 
     /**
-     * Returns price of trip on bus
+     * Method count price of trip by bus
      * @param checkpoints list of all checkpoints of trip
+     * @return price of trip by bus
      */
     public double getTripPrice(ArrayList<Checkpoint> checkpoints) {
         Distance distance = new Distance();

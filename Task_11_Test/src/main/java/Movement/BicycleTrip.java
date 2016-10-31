@@ -15,15 +15,17 @@ public class BicycleTrip extends Trip {
     private final double SPEED = 20;
 
     /**
-     * Returns name of bicycle
+     * Method get name of the bicycle
+     * @return name of the bicycle
      */
     public String getName() {
         return NAME;
     }
 
     /**
-     * Returns time of trip on bicycle
+     * Method count time of trip by bicycle
      * @param checkpoints list of all checkpoints of trip
+     * @return time of trip by bicycle
      */
     public double getTripTime(ArrayList<Checkpoint> checkpoints) {
         Distance distance = new Distance();
@@ -32,8 +34,9 @@ public class BicycleTrip extends Trip {
     }
 
     /**
-     * Returns price of trip on bicycle
+     * Method count price of trip by bicycle
      * @param checkpoints list of all checkpoints of trip
+     * @return price of trip by bicycle
      */
     public double getTripPrice(ArrayList<Checkpoint> checkpoints) {
         return 0;

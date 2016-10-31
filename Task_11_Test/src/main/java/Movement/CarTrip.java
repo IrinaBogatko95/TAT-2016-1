@@ -19,30 +19,33 @@ public class CarTrip extends Trip {
     private final double FUEL_PRICE = 0.5;
 
     /**
-     * Returns name of car
+     * Method get name of car
+     * @return name of car
      */
     public String getName() {
         return NAME;
     }
 
     /**
-     * Returns time of trip on car
+     * Method count time of trip by car
      * @param checkpoints list of all checkpoints of trip
+     * @return time of trip by car
      */
     public double getTripTime(ArrayList<Checkpoint> checkpoints) {
         Distance distance = new Distance();
         double time = distance.getDistance(checkpoints) / SPEED;
-        return 1000 * time / 1000;
+        return time;
     }
 
     /**
-     * Returns price of trip on car
+     * Method count price of trip by car
      * @param checkpoints list of all checkpoints of trip
+     * @return price of trip by car
      */
     public double getTripPrice(ArrayList<Checkpoint> checkpoints) {
         Distance distance = new Distance();
         double allFuelConsumption = distance.getDistance(checkpoints) * FUEL_CONSUMPTION / 100;
         double price = allFuelConsumption * FUEL_PRICE;
-        return 1000 * price / 1000;
+        return price;
     }
 }

@@ -13,6 +13,7 @@ public class Distance {
     /**
      * Sum distance between all checkpoints
      * @param checkpoints list of all checkpoints
+     * @return all distance of trip
      */
     public double getDistance(ArrayList<Checkpoint> checkpoints) {
         double distance = 0;
@@ -27,6 +28,7 @@ public class Distance {
      * Count and return distance between two checkpoints
      * @param firstCheckpoint  first checkpoint of trip
      * @param secondCheckpoint second checkpoint of trip
+     * @return distance between checkpoints
      */
     public double distanceBetweenCheckpoints(Checkpoint firstCheckpoint, Checkpoint secondCheckpoint) {
         double distance = Math.sqrt((secondCheckpoint.getX() - firstCheckpoint.getX()) * (secondCheckpoint.getX()

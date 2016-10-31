@@ -16,10 +16,10 @@ public class GetCheckpoints {
     /**
      * Read checkpoints from file and add them in list
      */
-    public ArrayList<Checkpoint> readCheckpoints() {
+    public ArrayList<Checkpoint> readCheckpoints(String path) {
         ArrayList<Checkpoint> list = new ArrayList<Checkpoint>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader("E:\\points.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(path));
             String line;
             while ((line = br.readLine()) != null) {
                 line = line.trim();

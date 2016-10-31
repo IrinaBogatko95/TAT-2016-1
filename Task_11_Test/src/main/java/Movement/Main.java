@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Checkpoint> checkpoints = new ArrayList<Checkpoint>();
         GetCheckpoints getCheckpoints = new GetCheckpoints();
-        checkpoints = getCheckpoints.readCheckpoints();
+        checkpoints = getCheckpoints.readCheckpoints("points.txt");
         ArrayList<Trip> allTrip = meansOfTransport();
 
         print(allTrip, checkpoints);
@@ -27,6 +27,7 @@ public class Main {
 
     /**
      * Method create list of means of transport
+     * @return list of means of transport
      */
     private static ArrayList<Trip> meansOfTransport() {
         ArrayList<Trip> travellersList = new ArrayList<Trip>();
@@ -40,6 +41,7 @@ public class Main {
     /**
      * Output time and price of trip on the screen
      * @param allTrip  list of vehicles
+     * @param checkpoints all checkpoints of the trip
      */
     private static void print(List<Trip> allTrip, ArrayList<Checkpoint> checkpoints) {
         for (Trip vehicle : allTrip) {

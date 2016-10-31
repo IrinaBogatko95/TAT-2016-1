@@ -12,19 +12,22 @@ import java.util.ArrayList;
 public abstract class Trip {
 
     /**
-     * Returns name of vehicle
+     * Method get name of vehicle
+     * @return name of vehicle
      */
     public abstract String getName();
 
     /**
-     * Returns price of trip
+     * Method count time of trip
      * @param checkpoints list of all checkpoints of trip
-     */
-    public abstract double getTripPrice(ArrayList<Checkpoint> checkpoints);
-
-    /**
-     * Returns time of trip
-     * @param checkpoints list of all checkpoints of trip
+     * @return time of trip
      */
     public abstract double getTripTime(ArrayList<Checkpoint> checkpoints);
+
+    /**
+     * Method count price of trip
+     * @param checkpoints list of all checkpoints of trip
+     * @return price of trip
+     */
+    public abstract double getTripPrice(ArrayList<Checkpoint> checkpoints);
 }
