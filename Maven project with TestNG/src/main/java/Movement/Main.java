@@ -22,7 +22,6 @@ public class Main {
         checkpoints = getCheckpoints.readCheckpoints("E:\\points.txt");
         ArrayList<Trip> trip = meansOfTransport();
         ArrayList<TripByFueledVehicle> tripOnVehicle = fueledMeansOfTransport();
-
         print(trip, tripOnVehicle, checkpoints);
     }
 
