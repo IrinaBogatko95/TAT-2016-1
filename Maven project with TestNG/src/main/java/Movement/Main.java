@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Checkpoint> checkpoints = new ArrayList<Checkpoint>();
         GetCheckpoints getCheckpoints = new GetCheckpoints();
-        checkpoints = getCheckpoints.readCheckpoints("E:\\points.txt");
+        checkpoints = getCheckpoints.readCheckpoints("points.txt");
         ArrayList<Trip> trip = meansOfTransport();
         ArrayList<TripByFueledVehicle> tripOnVehicle = fueledMeansOfTransport();
         print(trip, tripOnVehicle, checkpoints);
