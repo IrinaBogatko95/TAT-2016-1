@@ -16,7 +16,6 @@ public class Distance {
      * @return all distance of trip
      */
     public double getDistance(ArrayList<Checkpoint> checkpoints) {
-
         double distance = 0;
         for (int i = 1; i < checkpoints.size(); i++) {
             distance += distanceBetweenCheckpoints(checkpoints.get(i - 1), checkpoints.get(i));
