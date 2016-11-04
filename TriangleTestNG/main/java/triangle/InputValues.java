@@ -26,7 +26,6 @@ public class InputValues {
             secondSide = sc.nextDouble();
             System.out.println("Enter third side of triangle: ");
             thirdSide = sc.nextDouble();
-
         } catch (Exception ex) {
             System.out.println("You entered not a number!");
         }
