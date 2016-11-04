@@ -12,6 +12,7 @@ public class InputValues {
 
     /**
      * Expects the entering of sides of the triangle
+     * @param triangle triangle with entered sides
      * @return entered sides of the triangle
      */
     public Triangle valuesEntering(Triangle triangle) throws Exception {
