@@ -50,9 +50,9 @@ public class Triangle {
     /**
      * Determining whether the triangle equilateral, isosceles or the usual
      * @return kind of the triangle
-     * result = 1, triangle is
-     * result = 2, triangle is
-     * result = 3, triangle is
+     * result = 1, triangle is equilateral
+     * result = 2, triangle is isosceles
+     * result = 3, triangle is usual
      */
     public int kindOfTriangle() throws Exception {
         int result;
