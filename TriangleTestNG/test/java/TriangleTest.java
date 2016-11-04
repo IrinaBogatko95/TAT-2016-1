@@ -12,7 +12,9 @@ public class TriangleTest {
                 {1.0, 100, 100, 100},  //equilateral
                 {2.0, 8, 8, 6},        //isosceles
                 {3.0, 15, 16, 17},     //ordinary
-                {1.0, Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE}
+                {1.0, Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE},
+                {2.0, Double.MAX_VALUE, 20, Double.MAX_VALUE},
+                {3.0, Double.MAX_VALUE, 15, 16}
         };
     }
 
