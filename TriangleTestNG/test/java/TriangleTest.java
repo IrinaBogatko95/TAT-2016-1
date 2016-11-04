@@ -8,13 +8,11 @@ public class TriangleTest {
 
     @DataProvider(name = "Detect triangle provider")
     public Object[][] positiveKindTriangle() {
-        Triangle firstTriangle = new Triangle(100, 100, 100);
-        Triangle secondTriangle = new Triangle(8, 8, 6);
-        Triangle thirdTriangle = new Triangle(15, 16, 17);
         return new Object[][]{
-                {1.0, firstTriangle},         //equilateral
-                {2.0, secondTriangle},        //isosceles
-                {3.0, thirdTriangle},         //ordinary
+                {1.0, 100, 100, 100},  //equilateral
+                {2.0, 8, 8, 6},        //isosceles
+                {3.0, 15, 16, 17},     //ordinary
+                {1.0, Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE}
         };
     }
 
@@ -54,7 +52,8 @@ public class TriangleTest {
     }
 
     @Test(dataProvider = "Detect triangle provider")
-    public void positiveTestKindOfTriangle(double expected, Triangle triangle) throws Exception {
+    public void positiveTestKindOfTriangle(double expected, double a, double b, double c) throws Exception {
+        Triangle triangle = new Triangle(a, b, c);
         assertEquals(triangle.kindOfTriangle(), expected);
     }
 

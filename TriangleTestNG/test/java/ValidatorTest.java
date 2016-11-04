@@ -3,12 +3,6 @@ import org.testng.annotations.Test;
 import triangle.Triangle;
 import triangle.Validator;
 
-import static org.testng.Assert.assertEquals;
-
-/**
- * Created by irina on 03.11.2016.
- */
-
 public class ValidatorTest {
 
     @DataProvider(name = "Negative check triangle provider")
