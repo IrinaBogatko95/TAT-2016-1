@@ -29,7 +29,6 @@ public class InputValues {
 
         } catch (Exception ex) {
             System.out.println("You entered not a number!");
-            System.exit(1);
         }
         return new Triangle(firstSide, secondSide, thirdSide);
     }
