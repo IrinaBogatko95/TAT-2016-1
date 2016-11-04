@@ -2,7 +2,6 @@ package triangle;
 
 /**
  * Create new Triangle and definite kind of triangle
- *
  * @author Irina Bogatko
  * @version 2.0
  * @since 04-10-2016
@@ -17,7 +16,6 @@ public class Triangle {
 
     /**
      * Constructor create new Triangle
-     *
      * @param a first side of the triangle
      * @param b second side of the triangle
      * @param c third side of the triangle
@@ -51,7 +49,6 @@ public class Triangle {
 
     /**
      * Determining whether the triangle equilateral, isosceles or the usual
-     *
      * @return kind of the triangle
      * result = 1, triangle is
      * result = 2, triangle is
