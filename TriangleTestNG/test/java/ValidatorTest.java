@@ -11,6 +11,18 @@ import static org.testng.Assert.assertEquals;
 
 public class ValidatorTest {
 
+    @DataProvider(name = "Check triangle provider")
+    public Object[][] positiveCheckExistenceTriangle() {
+        Triangle firstTriangle = new Triangle(100, 100, 100);
+        Triangle secondTriangle = new Triangle(8, 8, 6);
+        Triangle thirdTriangle = new Triangle(15, 16, 17);
+        return new Object[][]{
+                {firstTriangle},         //equilateral
+                {secondTriangle},        //isosceles
+                {thirdTriangle},         //ordinary
+        };
+    }
+
     @DataProvider(name = "Negative check triangle provider")
     public Object[][] negativeCheckExistenceTriangle() {
         return new Object[][]{
@@ -44,6 +56,12 @@ public class ValidatorTest {
                 {20, 10, 1.7e+308},
                 {7, -1.7e+308, 6},
         };
+    }
+
+    @Test(dataProvider = "Check triangle provider")
+    public void positiveTestCheckExistenceTriangle(Triangle triangle) throws Exception {
+        Validator validator = new Validator();
+        assertEquals(validator.checkExistenceTriangle(triangle), validator.checkExistenceTriangle(triangle));
     }
 
     @Test(dataProvider = "Negative check triangle provider", expectedExceptions = Exception.class)
