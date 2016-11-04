@@ -15,17 +15,15 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
         try {
-            Triangle emptyTriangle = new Triangle(0, 0, 0);
             Validator validator = new Validator();
             InputValues inputValues = new InputValues();
-            Triangle triangle = inputValues.valuesEntering(emptyTriangle);
+            Triangle triangle = inputValues.valuesEntering();
             validator.checkExistenceTriangle(triangle);
             int result = triangle.kindOfTriangle();
             outputResults(result);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
     }
 
     /**
@@ -43,8 +41,6 @@ public class Main {
             case 3:
                 System.out.println("This triangle is ordinary!");
                 break;
-            default:
-                System.out.println("Can't determine kind of triangle!");
         }
         System.out.println("");
         System.out.println("The program is completed, have a good day!");

@@ -12,24 +12,26 @@ public class InputValues {
 
     /**
      * Expects the entering of sides of the triangle
-     * @param triangle triangle with entered sides
      * @return entered sides of the triangle
      */
-    public Triangle valuesEntering(Triangle triangle) throws Exception {
+    public Triangle valuesEntering() throws Exception {
+        double firstSide = 0;
+        double secondSide = 0;
+        double thirdSide = 0;
         try {
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter first side of triangle: ");
-            Double firstSide = sc.nextDouble();
+            firstSide = sc.nextDouble();
             System.out.println("Enter second side of triangle: ");
-            Double secondSide = sc.nextDouble();
+            secondSide = sc.nextDouble();
             System.out.println("Enter third side of triangle: ");
-            Double thirdSide = sc.nextDouble();
-            triangle = new Triangle(firstSide, secondSide, thirdSide);
+            thirdSide = sc.nextDouble();
+
         } catch (Exception ex) {
             System.out.println("You entered not a number!");
             System.exit(1);
         }
-        return triangle;
+        return new Triangle(firstSide, secondSide, thirdSide);
     }
 }
 
