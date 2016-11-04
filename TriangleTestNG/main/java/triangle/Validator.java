@@ -16,7 +16,7 @@ public class Validator {
      */
     public Triangle checkExistenceTriangle(Triangle triangle) throws Exception {
         if (zero(triangle.getA()) || zero(triangle.getB()) || zero(triangle.getC())) {
-            throw new Exception("Side of the triangle cannot be equal to zero!");
+            throw new Exception("Triangle doesn't exist!");
         } else if (triangle.getA() < 0 || triangle.getB() < 0 || triangle.getC() < 0) {
             throw new Exception("Side of the triangle cannot be less than zero!");
         } else if (triangle.getA() + triangle.getB() < triangle.getC() ||
