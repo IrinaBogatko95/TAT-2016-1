@@ -2,11 +2,15 @@ package triangle;
 
 /**
  * Create new Triangle and definite kind of triangle
+ *
  * @author Irina Bogatko
  * @version 2.0
  * @since 04-10-2016
  */
 public class Triangle {
+    private final int EQUILATERAL = 1;
+    private final int ISOSCELES = 2;
+    private final int ORDINARY = 3;
     //first side of the triangle
     private double a;
     //second side of the triangle
@@ -16,6 +20,7 @@ public class Triangle {
 
     /**
      * Constructor create new Triangle
+     *
      * @param a first side of the triangle
      * @param b second side of the triangle
      * @param c third side of the triangle
@@ -49,10 +54,11 @@ public class Triangle {
 
     /**
      * Determining whether the triangle equilateral, isosceles or the usual
+     *
      * @return kind of the triangle
-     * result = 1, triangle is equilateral
-     * result = 2, triangle is isosceles
-     * result = 3, triangle is usual
+     * result = 1, triangle is
+     * result = 2, triangle is
+     * result = 3, triangle is
      */
     public int kindOfTriangle() throws Exception {
         int result;
@@ -62,12 +68,12 @@ public class Triangle {
         int compare_cb = Double.compare(getC(), getB());
         //definition kind of triangle
         if (compare_ab == 0 && compare_ac == 0) {
-            result = 1;
+            result = EQUILATERAL;
         } else if ((compare_ab == 0 && compare_ac != 0) || (compare_ac == 0 && compare_cb != 0)
                 || (compare_cb == 0 && compare_ab != 0)) {
-            result = 2;
+            result = ISOSCELES;
         } else {
-            result = 3;
+            result = ORDINARY;
         }
         return result;
     }

@@ -2,7 +2,6 @@ package triangle;
 
 /**
  * Class check triangle for validity
- *
  * @author Irina Bogatko
  * @version 2.0
  * @since 04-10-2016
