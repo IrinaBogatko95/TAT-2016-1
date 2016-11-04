@@ -17,15 +17,12 @@ public class InputValues {
     public Triangle valuesEntering(Triangle triangle) throws Exception {
         try {
             Scanner sc = new Scanner(System.in);
-            Double firstSide;
-            Double secondSide;
-            Double thirdSide;
             System.out.println("Enter first side of triangle: ");
-            firstSide = sc.nextDouble();
+            Double firstSide = sc.nextDouble();
             System.out.println("Enter second side of triangle: ");
-            secondSide = sc.nextDouble();
+            Double secondSide = sc.nextDouble();
             System.out.println("Enter third side of triangle: ");
-            thirdSide = sc.nextDouble();
+            Double thirdSide = sc.nextDouble();
             triangle = new Triangle(firstSide, secondSide, thirdSide);
         } catch (Exception ex) {
             System.out.println("You entered not a number!");
