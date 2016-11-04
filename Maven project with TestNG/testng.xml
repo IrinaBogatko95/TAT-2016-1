@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test_Suite_Time">
+        <test name="BicycleTripTest" preserve-order="true">
+                <classes>
+                        <class name="Movement.BicycleTripTest">
+                                <methods>
+                                        <exclude name="positiveTestGetTripTime()"/>
+                                        <exclude name="negativeTestGetTripTime(double, java.util.ArrayList)"/>
+                                </methods>
+                        </class>
+                </classes>
+        </test>
+        <test name="BusTripTest" preserve-order="true">
+                <classes>
+                        <class name="Movement.BusTripTest">
+                                <methods>
+                                        <exclude name="positiveTestGetTripTime()"/>
+                                        <exclude name="negativeTestGetTripTime(double, java.util.ArrayList)"/>
+                                </methods>
+                        </class>
+                </classes>
+        </test>
+        <test name="CarTripTest" preserve-order="true">
+                <classes>
+                        <class name="Movement.CarTripTest">
+                                <methods>
+                                        <exclude name="positiveTestGetTripTime()"/>
+                                        <exclude name="negativeTestGetTripTime(double, java.util.ArrayList)"/>
+                                </methods>
+                        </class>
+                </classes>
+        </test>
+        <test name="FootTripTest" preserve-order="true">
+                <classes>
+                        <class name="Movement.FootTripTest">
+                                <methods>
+                                        <exclude name="positiveTestGetTripTime()"/>
+                                        <exclude name="negativeTestGetTripTime(double, java.util.ArrayList)"/>
+                                </methods>
+                        </class>
+                </classes>
+        </test>
+</suite>
