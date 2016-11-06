@@ -62,9 +62,8 @@ public class Triangle {
     /**
      * Determining whether the triangle equilateral, isosceles or the usual
      * @param triangle triangle with entered sides
-     * @return kind of the triangle
      */
-    public String kindOfTriangle(Triangle triangle) throws Exception {
+    public void kindOfTriangle(Triangle triangle) throws Exception {
         Validator validator = new Validator();
         validator.checkExistenceTriangle(triangle);
         //side comparison
@@ -80,6 +79,5 @@ public class Triangle {
         } else {
             type = ORDINARY;
         }
-        return type;
     }
 }
