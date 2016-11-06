@@ -24,8 +24,12 @@ public class ValidatorTest {
                 {00000100, 00000011, 00000101},
                 {4e10, 3e10, 5e10},
                 {null, null, null},
+                {3, null, null},
                 {null, 3, null},
-                {null, null, 6},
+                {null, null, 3},
+                {3, 2, null},
+                {null, 3, 2},
+                {2, null, 3},
                 {Double.NEGATIVE_INFINITY, 4, 3},
                 {Double.POSITIVE_INFINITY, 5, 6},
                 {Double.NaN, 3, 10},
@@ -42,6 +46,8 @@ public class ValidatorTest {
                 {20, 10, Double.MAX_VALUE},
                 {7, Double.MIN_VALUE, 6},
                 {7, Double.MIN_VALUE, Double.MIN_VALUE},
+                {Double.MIN_VALUE, 7, Double.MIN_VALUE},
+                {Double.MIN_VALUE, Double.MIN_VALUE, 7},
         };
     }
 
