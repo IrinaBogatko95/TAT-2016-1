@@ -9,6 +9,9 @@ public class ValidatorTest {
     public Object[][] negativeCheckExistenceTriangle() {
         return new Object[][]{
                 {0, 0, 0},
+                {0, 1, 1},
+                {1, 0, 1},
+                {1, 1, 0},
                 {100, 200, 1},
                 {1, 100, 200},
                 {100, 1, 200},
@@ -17,6 +20,7 @@ public class ValidatorTest {
                 {4, 5, -6},
                 {-4, -3, -5},
                 {1 / 2, 1 / 5, 1 / 66},
+                {-1 / 2, -1 / 5, -1 / 66},
                 {00000100, 00000011, 00000101},
                 {4e10, 3e10, 5e10},
                 {null, null, null},
@@ -31,12 +35,13 @@ public class ValidatorTest {
                 {12, 4, Double.NEGATIVE_INFINITY},
                 {43, 5, Double.POSITIVE_INFINITY},
                 {2, 3, Double.NaN},
-                {-4.9e-324, 9, 10},
-                {20, 10, -4.9e-324},
-                {7, -4.9e-324, 6},
-                {1.7e+308, 9, 10},
-                {20, 10, 1.7e+308},
-                {7, -1.7e+308, 6},
+                {Double.MIN_VALUE, 9, 10},
+                {20, 10, Double.MIN_VALUE},
+                {7, Double.MIN_VALUE, 6},
+                {Double.MAX_VALUE, 9, 10},
+                {20, 10, Double.MAX_VALUE},
+                {7, Double.MIN_VALUE, 6},
+                {7, Double.MIN_VALUE, Double.MIN_VALUE},
         };
     }
 
