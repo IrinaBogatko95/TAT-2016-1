@@ -25,10 +25,10 @@ public class TriangleTest {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(inputFile);
-        NodeList nodes = document.getElementsByTagName(POSITIVE);
-        Object[][] result = new Object[nodes.getLength()][];
-        for (int i = 0; i < nodes.getLength(); i++) {
-            NamedNodeMap map = nodes.item(i).getAttributes();
+        NodeList nodeList = document.getElementsByTagName(POSITIVE);
+        Object[][] result = new Object[nodeList.getLength()][];
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            NamedNodeMap map = nodeList.item(i).getAttributes();
             result[i] = new Object[]{
                     map.getNamedItem(EXPECTED).getNodeValue(),
                     Double.parseDouble(map.getNamedItem(SIDE_A).getNodeValue()),

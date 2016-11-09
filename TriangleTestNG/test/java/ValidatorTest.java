@@ -24,10 +24,10 @@ public class ValidatorTest {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         Document document = builder.parse(inputFile);
-        NodeList nodes = document.getElementsByTagName(NEGATIVE);
-        Object[][] result = new Double[nodes.getLength()][];
-        for (int i = 0; i < nodes.getLength(); i++) {
-            NamedNodeMap map = nodes.item(i).getAttributes();
+        NodeList nodeList = document.getElementsByTagName(NEGATIVE);
+        Object[][] result = new Double[nodeList.getLength()][];
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            NamedNodeMap map = nodeList.item(i).getAttributes();
             result[i] = new Double[]{
                     map.getNamedItem(SIDE_A) == null ? null : Double.parseDouble(map.getNamedItem(SIDE_A).getNodeValue()),
                     map.getNamedItem(SIDE_B) == null ? null : Double.parseDouble(map.getNamedItem(SIDE_B).getNodeValue()),
