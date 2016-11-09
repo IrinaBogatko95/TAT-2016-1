@@ -1,0 +1,15 @@
+<?xml version= "1.0" ?>
+<data>
+    <positive expected="equilateral" side_a="100" side_b="100" side_c="100"/>
+    <positive expected="equilateral" side_a="1.79769313486231E+308" side_b="1.79769313486231E+308"
+              side_c="1.79769313486231E+308"/>
+    <positive expected="equilateral" side_a="4.9E-324" side_b="4.9E-324" side_c="4.9E-324"/>
+    <positive expected="isosceles" side_a="8" side_b="8" side_c="6"/>
+    <positive expected="isosceles" side_a="1.79769313486231E+308" side_b="20" side_c="1.79769313486231E+308"/>
+    <positive expected="isosceles" side_a="20" side_b="1.79769313486231E+308" side_c="1.79769313486231E+308"/>
+    <positive expected="isosceles" side_a="1.79769313486231E+308" side_b="1.79769313486231E+308" side_c="20"/>
+    <positive expected="isosceles" side_a="4.9E-324" side_b="1" side_c="1"/>
+    <positive expected="isosceles" side_a="1" side_b="4.9E-324" side_c="1"/>
+    <positive expected="isosceles" side_a="1" side_b="1" side_c="4.9E-324"/>
+    <positive expected="ordinary" side_a="15" side_b="16" side_c="17"/>
+</data>
