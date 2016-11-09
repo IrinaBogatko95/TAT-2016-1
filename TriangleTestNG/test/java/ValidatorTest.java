@@ -10,9 +10,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
-
 public class ValidatorTest {
-    public static final String PATH = "C:\\Users\\irina\\IdeaProjects\\Maven_Triangle\\NegativeDataTriangle.xml";
+    public static final String PATH = "\\Maven_Triangle\\NegativeDataTriangle.xml";
     public static final String NEGATIVE = "negative";
     public static final String SIDE_A = "side_a";
     public static final String SIDE_B = "side_b";
@@ -43,6 +42,5 @@ public class ValidatorTest {
         Validator validator = new Validator();
         Triangle triangle = new Triangle(a, b, c);
         validator.checkExistenceTriangle(triangle);
-
     }
 }
