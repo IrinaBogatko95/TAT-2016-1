@@ -11,7 +11,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 public class ValidatorTest {
-    public static final String PATH = "\\Maven_Triangle\\NegativeDataTriangle.xml";
+    public static final String PATH = ".\\NegativeDataTriangle.xml";
     public static final String NEGATIVE = "negative";
     public static final String SIDE_A = "side_a";
     public static final String SIDE_B = "side_b";
@@ -29,18 +29,28 @@ public class ValidatorTest {
         for (int i = 0; i < nodeList.getLength(); i++) {
             NamedNodeMap map = nodeList.item(i).getAttributes();
             result[i] = new Double[]{
-                    map.getNamedItem(SIDE_A) == null ? null : Double.parseDouble(map.getNamedItem(SIDE_A).getNodeValue()),
-                    map.getNamedItem(SIDE_B) == null ? null : Double.parseDouble(map.getNamedItem(SIDE_B).getNodeValue()),
-                    map.getNamedItem(SIDE_C) == null ? null : Double.parseDouble(map.getNamedItem(SIDE_C).getNodeValue()),
+                    map.getNamedItem(SIDE_A) == null ? null : getDoubleSide(map.getNamedItem(SIDE_A).getNodeValue()),
+                    map.getNamedItem(SIDE_B) == null ? null : getDoubleSide(map.getNamedItem(SIDE_B).getNodeValue()),
+                    map.getNamedItem(SIDE_C) == null ? null : getDoubleSide(map.getNamedItem(SIDE_C).getNodeValue()),
             };
         }
         return result;
     }
 
     @Test(dataProvider = "Negative check triangle provider", expectedExceptions = Exception.class)
-    public void negativeTestCheckExistenceTriangle(Double a, Double b, Double c) throws Exception {
+    public void negativeTestCheckExistenceTriangle(double a, double b, double c) throws Exception {
         Validator validator = new Validator();
         Triangle triangle = new Triangle(a, b, c);
         validator.checkExistenceTriangle(triangle);
+    }
+
+    public double getDoubleSide(String side) {
+        if (side.equals("Double.MAX_VALUE")) {
+            return Double.MAX_VALUE;
+        }
+        if (side.equals("Double.MIN_VALUE")) {
+            return Double.MIN_VALUE;
+        }
+        return Double.parseDouble(side);
     }
 }

@@ -17,6 +17,10 @@
     <negative side_a="3" side_b="2"/>
     <negative side_b="3" side_c="2"/>
     <negative side_a="3" side_c="2"/>
+    <negative side_a="-Infinity" side_b="-Infinity" side_c="-Infinity"/>
+    <negative side_a="Infinity" side_b="Infinity" side_c="Infinity"/>
+    <negative side_a="-Infinity" side_b="-Infinity" side_c="3"/>
+    <negative side_a="Infinity" side_b="Infinity" side_c="3"/>
     <negative side_a="-Infinity" side_b="4" side_c="3"/>
     <negative side_a="Infinity" side_b="4" side_c="3"/>
     <negative side_a="NaN" side_b="4" side_c="3"/>
@@ -26,13 +30,13 @@
     <negative side_a="4" side_b="3" side_c="-Infinity"/>
     <negative side_a="4" side_b="3" side_c="Infinity"/>
     <negative side_a="4" side_b="3" side_c="NaN"/>
-    <negative side_a="4.9E-324" side_b="9" side_c="10"/>
-    <negative side_a="20" side_b="10" side_c="4.9E-324"/>
-    <negative side_a="20" side_b="4.9E-324" side_c="10"/>
-    <negative side_a="1.79769313486231E+308" side_b="9" side_c="10"/>
-    <negative side_a="20" side_b="10" side_c="1.79769313486231E+308"/>
-    <negative side_a="20" side_b="1.79769313486231E+308" side_c="10"/>
-    <negative side_a="4.9E-324" side_b="4.9E-324" side_c="10"/>
-    <negative side_a="4.9E-324" side_b="10" side_c="4.9E-324"/>
-    <negative side_a="20" side_b="4.9E-324" side_c="4.9E-324"/>
+    <negative side_a="Double.MIN_VALUE" side_b="9" side_c="10"/>
+    <negative side_a="20" side_b="10" side_c="Double.MIN_VALUE"/>
+    <negative side_a="20" side_b="Double.MIN_VALUE" side_c="10"/>
+    <negative side_a="Double.MAX_VALUE" side_b="9" side_c="10"/>
+    <negative side_a="20" side_b="10" side_c="Double.MAX_VALUE"/>
+    <negative side_a="20" side_b="Double.MAX_VALUE" side_c="10"/>
+    <negative side_a="Double.MIN_VALUE" side_b="Double.MIN_VALUE" side_c="10"/>
+    <negative side_a="Double.MIN_VALUE" side_b="10" side_c="Double.MIN_VALUE"/>
+    <negative side_a="20" side_b="Double.MIN_VALUE" side_c="Double.MIN_VALUE"/>
 </data>

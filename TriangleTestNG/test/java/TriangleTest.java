@@ -12,7 +12,7 @@ import java.io.File;
 import static org.testng.Assert.assertEquals;
 
 public class TriangleTest {
-    public static final String PATH = "\\Maven_Triangle\\PositiveDataTriangle.xml";
+    public static final String PATH = ".\\PositiveDataTriangle.xml";
     public static final String POSITIVE = "positive";
     public static final String EXPECTED = "expected";
     public static final String SIDE_A = "side_a";
@@ -31,18 +31,28 @@ public class TriangleTest {
             NamedNodeMap map = nodeList.item(i).getAttributes();
             result[i] = new Object[]{
                     map.getNamedItem(EXPECTED).getNodeValue(),
-                    Double.parseDouble(map.getNamedItem(SIDE_A).getNodeValue()),
-                    Double.parseDouble(map.getNamedItem(SIDE_B).getNodeValue()),
-                    Double.parseDouble(map.getNamedItem(SIDE_C).getNodeValue())
+                    getDoubleSide(map.getNamedItem(SIDE_A).getNodeValue()),
+                    getDoubleSide(map.getNamedItem(SIDE_B).getNodeValue()),
+                    getDoubleSide(map.getNamedItem(SIDE_C).getNodeValue()),
             };
         }
         return result;
     }
 
     @Test(dataProvider = "Detect triangle provider")
-    public void positiveTestEquilateralKindOfTriangle(String expected, Double a, Double b, Double c) throws Exception {
+    public void positiveTestEquilateralKindOfTriangle(String expected, double a, double b, double c) throws Exception {
         Triangle triangle = new Triangle(a, b, c);
         triangle.kindOfTriangle(triangle);
         assertEquals(triangle.getType(), expected);
+    }
+
+    public double getDoubleSide(String side) {
+        if (side.equals("Double.MAX_VALUE")) {
+            return Double.MAX_VALUE;
+        }
+        if (side.equals("Double.MIN_VALUE")) {
+            return Double.MIN_VALUE;
+        }
+        return Double.parseDouble(side);
     }
 }
