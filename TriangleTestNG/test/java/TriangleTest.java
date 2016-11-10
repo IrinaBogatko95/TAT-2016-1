@@ -20,7 +20,7 @@ public class TriangleTest {
     public static final String SIDE_C = "side_c";
 
     @DataProvider(name = "Detect triangle provider")
-    public Object[][] positiveEquilateralKindTriangle() throws Exception {
+    public Object[][] positiveKindTriangle() throws Exception {
         File inputFile = new File(PATH);
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -40,7 +40,7 @@ public class TriangleTest {
     }
 
     @Test(dataProvider = "Detect triangle provider")
-    public void positiveTestEquilateralKindOfTriangle(String expected, double a, double b, double c) throws Exception {
+    public void positiveTestKindOfTriangle(String expected, double a, double b, double c) throws Exception {
         Triangle triangle = new Triangle(a, b, c);
         triangle.kindOfTriangle(triangle);
         assertEquals(triangle.getType(), expected);
