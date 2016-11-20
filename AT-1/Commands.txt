@@ -1,0 +1,5 @@
+open "http://www.google.com" "30"
+checkPageTitle "Google Search Page"
+checkPageContains "The best search engine"
+checkLinkPresentByHref "https://www.google.by/intl/ru/policies/privacy/?fg=1"
+checkLinkPresentByName "google"

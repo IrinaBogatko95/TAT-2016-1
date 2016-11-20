@@ -1,0 +1,9 @@
++ [open "http://www.google.com" "30"] 2.511
+! [checkPageTitle "Google Search Page"] 0.019
+! [checkPageContains "The best search engine"] 0.428
+! [checkLinkPresentByHref "https://google.com/mail/?tab=wm"] 2.372
+! [checkLinkPresentByName "google"] 0.027
+Total tests: 5
+Passed/Failed: 1/4
+Total time: 5.357
+Average time: 1.071
