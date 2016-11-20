@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * @since 18.11.2016
  */
 public class WriteLog {
+    private final String PATH = ".\\Result.txt";
     private double totalTime = 0;
     private int failedTests = 0;
     private int passedTests = 0;
@@ -22,7 +23,7 @@ public class WriteLog {
      * @throws Exception if problems to write result to log-file
      */
     public void writeResultsToLog(ArrayList<Result> results) throws Exception {
-        FileWriter writer = new FileWriter(".\\Result.txt", false);
+        FileWriter writer = new FileWriter(PATH, false);
         for (Result currentResult : results) {
             String testResult = currentResult.getResult();
             writer.write(testResult + " " + currentResult.getInstruction() + " " + currentResult.getExecuteTime());

@@ -14,6 +14,8 @@ import java.util.ArrayList;
  * @since 18.11.2016
  */
 public class ExecuteCommand {
+    private final String DRIVER = "webdriver.firefox.driver";
+    private final String PATH = ".\\geckodriver.exe";
 
     /**
      * Find some commands and execute them
@@ -23,31 +25,32 @@ public class ExecuteCommand {
      * @throws Exception if problems to do commands
      */
     public ArrayList<Result> doCommands(ArrayList<Command> commands) throws Exception {
-        System.setProperty("webdriver.firefox.driver", "C:\\Users\\irina\\IdeaProjects\\AT-1\\geckodriver.exe");
+        System.setProperty(DRIVER, PATH);
         WebDriver webDriver = new FirefoxDriver();
         ArrayList<Result> results = new ArrayList<Result>();
         for (Command selectedCommand : commands) {
             RequestCommand requestCommand = RequestCommand.getCommand(selectedCommand.getNameCommand());
+            AllCommand executeCommand;
             switch (requestCommand) {
                 case OPEN:
-                    OpenCommand openCommand = new OpenCommand();
-                    results.add(openCommand.doCommand(webDriver, selectedCommand));
+                    executeCommand = new OpenCommand();
+                    results.add(executeCommand.doCommand(webDriver, selectedCommand));
                     break;
                 case CHECK_LINK_PRESENT_BY_HREF:
-                    CheckLinkPresentByHrefCommand byHrefCommand = new CheckLinkPresentByHrefCommand();
-                    results.add(byHrefCommand.doCommand(webDriver, selectedCommand));
+                    executeCommand = new CheckLinkPresentByHrefCommand();
+                    results.add(executeCommand.doCommand(webDriver, selectedCommand));
                     break;
                 case CHECK_LINK_PRESENT_BY_NAME:
-                    CheckLinkPresentByNameCommand byNameCommand = new CheckLinkPresentByNameCommand();
-                    results.add(byNameCommand.doCommand(webDriver, selectedCommand));
+                    executeCommand = new CheckLinkPresentByNameCommand();
+                    results.add(executeCommand.doCommand(webDriver, selectedCommand));
                     break;
                 case CHECK_PAGE_TITLE:
-                    CheckPageTitleCommand pageTitleCommand = new CheckPageTitleCommand();
-                    results.add(pageTitleCommand.doCommand(webDriver, selectedCommand));
+                    executeCommand = new CheckPageTitleCommand();
+                    results.add(executeCommand.doCommand(webDriver, selectedCommand));
                     break;
                 case CHECK_PAGE_CONTAINS:
-                    CheckPageContainsCommand pageContainsCommand = new CheckPageContainsCommand();
-                    results.add(pageContainsCommand.doCommand(webDriver, selectedCommand));
+                    executeCommand = new CheckPageContainsCommand();
+                    results.add(executeCommand.doCommand(webDriver, selectedCommand));
                     break;
                 default: throw new Exception("Unknown command!");
             }

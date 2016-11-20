@@ -11,7 +11,7 @@
     },
     {
       "name": "checkLinkPresentByHref",
-      "argument": "https://google.com/mail"
+      "argument": "https://www.google.by/intl"
     },
     {
       "name": "checkPageTitle",

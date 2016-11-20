@@ -33,7 +33,7 @@ public class ParserJson {
             json = new JsonParser().parse(new BufferedReader(new FileReader(PATH))).getAsJsonObject();
             JsonArray commandJsonArray = json.getAsJsonArray("commands");
             for (JsonElement command : commandJsonArray) {
-                String name =
+                String nameCommand =
                         command.getAsJsonObject().get("name") == null ? null :
                                 command.getAsJsonObject().get("name").getAsString();
                 String url =
@@ -42,10 +42,10 @@ public class ParserJson {
                 String argument =
                         command.getAsJsonObject().get("argument") == null ? null :
                                 command.getAsJsonObject().get("argument").getAsString();
-                if (name.equals("open")) {
-                    commands.add(new Command(name, url, argument));
+                if (nameCommand.equals("open")) {
+                    commands.add(new Command(nameCommand, url, argument));
                 } else {
-                    commands.add(new Command(name, null, argument));
+                    commands.add(new Command(nameCommand, null, argument));
                 }
             }
         } catch (Exception e) {

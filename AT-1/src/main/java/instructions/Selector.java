@@ -53,6 +53,8 @@ public class Selector {
                 }
             }
         }
+        ValidatorCommands validatorCommands = new ValidatorCommands();
+        validatorCommands.validate(commands);
         return commands;
     }
 }
