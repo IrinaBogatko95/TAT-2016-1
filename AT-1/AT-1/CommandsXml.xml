@@ -1,0 +1,7 @@
+<?xml version= "1.0"?>
+<data>
+    <instruction name="open" url="https://vk.com" arg="30"/>
+    <instruction name="checkPageTitle" arg="Welcome!"/>
+    <instruction name="checkPageContains" arg="VK for mobile devices"/>
+    <instruction name="checkLinkPresentByHref" arg="https://vk.com/about"/>
+</data>

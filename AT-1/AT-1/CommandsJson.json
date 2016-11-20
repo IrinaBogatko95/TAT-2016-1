@@ -1,0 +1,25 @@
+{
+  "commands": [
+    {
+      "name": "open",
+      "url": "http://www.google.com",
+      "argument": "30"
+    },
+    {
+      "name": "checkLinkPresentByName",
+      "argument": "google"
+    },
+    {
+      "name": "checkLinkPresentByHref",
+      "argument": "https://www.google.by/intl"
+    },
+    {
+      "name": "checkPageTitle",
+      "argument": "Google"
+    },
+    {
+      "name": "checkPageContains",
+      "argument": "Google"
+    }
+  ]
+}
