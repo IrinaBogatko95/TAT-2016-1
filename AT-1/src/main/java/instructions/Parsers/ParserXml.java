@@ -17,6 +17,10 @@ import java.util.ArrayList;
 public class ParserXml {
     private final String PATH = ".\\CommandsXml.xml";
     private final String TAG = "instruction";
+    private final String NAME = "name";
+    private final String URL = "url";
+    private final String OPEN = "open";
+    private final String ARGUMENT = "arg";
     ArrayList<Command> commands = new ArrayList<Command>();
 
     /**
@@ -30,14 +34,14 @@ public class ParserXml {
         NodeList nodeList = fileReader.fileReaderFromXml(PATH, TAG);
         for (int i = 0; i < nodeList.getLength(); i++) {
             NamedNodeMap map = nodeList.item(i).getAttributes();
-            if (map.getNamedItem("name").getNodeValue().equals("open")) {
-                commands.add(new Command(String.valueOf(map.getNamedItem("name").getNodeValue()),
-                        String.valueOf(map.getNamedItem("url").getNodeValue()),
-                        String.valueOf(map.getNamedItem("arg").getNodeValue())));
+            if (map.getNamedItem(NAME).getNodeValue().equals(OPEN)) {
+                commands.add(new Command(String.valueOf(map.getNamedItem(NAME).getNodeValue()),
+                        String.valueOf(map.getNamedItem(URL).getNodeValue()),
+                        String.valueOf(map.getNamedItem(ARGUMENT).getNodeValue())));
             } else {
-                commands.add(new Command(String.valueOf(map.getNamedItem("name").getNodeValue()),
+                commands.add(new Command(String.valueOf(map.getNamedItem(NAME).getNodeValue()),
                         null,
-                        String.valueOf(map.getNamedItem("arg").getNodeValue())));
+                        String.valueOf(map.getNamedItem(ARGUMENT).getNodeValue())));
             }
         }
         return commands;
