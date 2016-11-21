@@ -49,7 +49,7 @@ public class Selector {
                     break;
                 }
                 default: {
-                    throw new Exception("You entered wrong number! Please, try again!");
+                    throw new Exception("Wrong number!");
                 }
             }
         }
