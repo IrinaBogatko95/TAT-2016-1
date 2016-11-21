@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public class ParserCmd {
     ArrayList<Command> commands = new ArrayList<Command>();
+    private final String COMMAND_PREFIX = "--command";
+    private final String OPEN = "open";
 
     /**
      * Parsing commands from command line
@@ -22,8 +24,8 @@ public class ParserCmd {
      */
     public ArrayList<Command> parseCommands(String[] args) {
         for (int i = 0; i < args.length; i++) {
-            if (args[i].startsWith("--command")) {
-                if (args[i + 1].startsWith("open")) {
+            if (args[i].startsWith(COMMAND_PREFIX)) {
+                if (args[i + 1].startsWith(OPEN)) {
                     commands.add(new Command(args[i + 1], args[i + 2], args[i + 3]));
                 } else {
                     commands.add(new Command(args[i + 1], null, args[i + 2]));
