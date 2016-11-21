@@ -20,6 +20,11 @@ import java.util.ArrayList;
 public class ParserJson {
     ArrayList<Command> commands = new ArrayList<Command>();
     public final String PATH = ".\\CommandsJson.json";
+    private final String COMMANDS = "commands";
+    private final String NAME = "name";
+    private final String URL = "url";
+    private final String OPEN = "open";
+    private final String ARGUMENT = "argument";
     JsonObject json;
 
     /**
@@ -31,18 +36,18 @@ public class ParserJson {
     public ArrayList<Command> parseCommands() throws Exception {
         try {
             json = new JsonParser().parse(new BufferedReader(new FileReader(PATH))).getAsJsonObject();
-            JsonArray commandJsonArray = json.getAsJsonArray("commands");
+            JsonArray commandJsonArray = json.getAsJsonArray(COMMANDS);
             for (JsonElement command : commandJsonArray) {
                 String nameCommand =
-                        command.getAsJsonObject().get("name") == null ? null :
-                                command.getAsJsonObject().get("name").getAsString();
+                        command.getAsJsonObject().get(NAME) == null ? null :
+                                command.getAsJsonObject().get(NAME).getAsString();
                 String url =
-                        command.getAsJsonObject().get("url") == null ? null :
-                                command.getAsJsonObject().get("url").getAsString();
+                        command.getAsJsonObject().get(URL) == null ? null :
+                                command.getAsJsonObject().get(URL).getAsString();
                 String argument =
-                        command.getAsJsonObject().get("argument") == null ? null :
-                                command.getAsJsonObject().get("argument").getAsString();
-                if (nameCommand.equals("open")) {
+                        command.getAsJsonObject().get(ARGUMENT) == null ? null :
+                                command.getAsJsonObject().get(ARGUMENT).getAsString();
+                if (nameCommand.equals(OPEN)) {
                     commands.add(new Command(nameCommand, url, argument));
                 } else {
                     commands.add(new Command(nameCommand, null, argument));
