@@ -13,7 +13,7 @@ import java.io.File;
  * @version 1.0
  * @since 18.11.2016
  */
-public class FileReader {
+public class FileReaderXml {
 
     /**
      * Get nodeList of elements with certain tag
