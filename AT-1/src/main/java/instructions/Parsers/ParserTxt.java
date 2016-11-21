@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 public class ParserTxt {
     private final String PATH = ".\\Commands.txt";
+    private final String OPEN = "open";
     ArrayList<Command> commands = new ArrayList<Command>();
 
     /**
@@ -30,7 +31,7 @@ public class ParserTxt {
             while ((line = br.readLine()) != null) {
                 String[] instructions = line.split("\\s+", 2);
                 String[] parsedInstructions = instructions[1].split("\\s+", 2);
-                if (instructions[0].equals("open")) {
+                if (instructions[0].equals(OPEN)) {
                     commands.add(new Command(instructions[0],
                             parsedInstructions[0].substring(1, parsedInstructions[0].length() - 1),
                             parsedInstructions[1].substring(1, parsedInstructions[1].length() - 1)));
