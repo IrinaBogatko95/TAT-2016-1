@@ -26,7 +26,7 @@ public class ParserXml {
      * @throws Exception if problem to create new command
      */
     public ArrayList<Command> parseCommands() throws Exception {
-        FileReader fileReader = new FileReader();
+        FileReaderXml fileReader = new FileReaderXml();
         NodeList nodeList = fileReader.fileReaderFromXml(PATH, TAG);
         for (int i = 0; i < nodeList.getLength(); i++) {
             NamedNodeMap map = nodeList.item(i).getAttributes();
