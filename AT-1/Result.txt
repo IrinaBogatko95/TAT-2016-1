@@ -1,0 +1,8 @@
++ [open "https://vk.com" "30"] 5.689
+! [checkPageTitle "Welcome!"] 0.024
+! [checkPageContains "VK for mobile devices"] 0.166
+! [checkLinkPresentByHref "https://vk.com/about"] 0.406
+Total tests: 4
+Passed/Failed: 1/3
+Total time: 6.285
+Average time: 1.571
