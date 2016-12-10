@@ -1,81 +1,87 @@
 package Task_5;
-import java.util.Scanner;
 
 /**
- * Output on the screen whether the  triangle equilateral, isosceles or the usual
+ * Create new Triangle and definite kind of triangle
+ *
  * @author Irina Bogatko
- * @version 1.0
+ * @version 2.1
  * @since 04-10-2016
  */
 public class Triangle {
+    public final static String EQUILATERAL = "equilateral";
+    public final static String ISOSCELES = "isosceles";
+    public final static String ORDINARY = "ordinary";
+    //first side of the triangle
+    private double a;
+    //second side of the triangle
+    private double b;
+    //third side of the triangle
+    private double c;
+    //type of triangle
+    private String type;
 
     /**
-     * challenge "valuesEntering" and "kindOfTriangle" methods
-     * @param args command-line arguments
+     * Constructor create new Triangle
+     *
+     * @param a first side of the triangle
+     * @param b second side of the triangle
+     * @param c third side of the triangle
      */
-    public static void main(String[] args) {
-        double[] values = new double[3];
-        valuesEntering(values);
-        kindOfTriangle(values);
+    public Triangle(double a, double b, double c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     /**
-     * Determining whether the triangle equilateral, isosceles or the usual.
-     * @param values array with input values
+     * @return type of the triangle
      */
-    public static void kindOfTriangle(double[] values) {
+    public String getType() {
+        return type;
+    }
 
+    /**
+     * @return first side of the triangle
+     */
+    public double getA() {
+        return a;
+    }
+
+    /**
+     * @return second side of the triangle
+     */
+    public double getB() {
+        return b;
+    }
+
+    /**
+     * @return third side of the triangle
+     */
+    public double getC() {
+        return c;
+    }
+
+    /**
+     * Determining whether the triangle equilateral, isosceles or the usual
+     *
+     * @param triangle triangle with entered sides
+     * @throws Exception if problem to get kind of the triangle
+     */
+    public void kindOfTriangle(Triangle triangle) throws Exception {
+        Validator validator = new Validator();
+        validator.checkExistenceTriangle(triangle);
         //side comparison
-        int compare_ab = Double.compare(values[0], values[1]);
-        int compare_ac = Double.compare(values[0], values[2]);
-        int compare_cb = Double.compare(values[2], values[1]);
-
-        if(compare_ab == 0 && compare_ac == 0){
-            System.out.println("This triangle is equilateral");
-        } else if ((compare_ab == 0 && compare_ac != 0 ) || (compare_ac == 0 && compare_cb != 0)
-                || (compare_cb == 0 && compare_ab !=0)){
-            System.out.println("This triangle is isosceles");
+        int compare_ab = Double.compare(getA(), getB());
+        int compare_ac = Double.compare(getA(), getC());
+        int compare_cb = Double.compare(getC(), getB());
+        //definition kind of triangle
+        if (compare_ab == 0 && compare_ac == 0) {
+            type = EQUILATERAL;
+        } else if ((compare_ab == 0 && compare_ac != 0) || (compare_ac == 0 && compare_cb != 0)
+                || (compare_cb == 0 && compare_ab != 0)) {
+            type = ISOSCELES;
         } else {
-            System.out.println("This triangle is ordinary");
+            type = ORDINARY;
         }
-    }
-
-    /**
-     * Expects the entering of values from the user, returns this values
-     * and verifies the existence of a triangle
-     * @param values array of input values
-     */
-    public static double[] valuesEntering(double[] values) {
-        Scanner sc = new Scanner(System.in);
-        try {
-            for (int i = 0; i < values.length; i++) {
-                System.out.println("Enter " + (i + 1) + " side of the triangle:");
-                values[i] = sc.nextDouble();
-            }
-
-            //checks for equality sides to zero and the existence of a triangle
-            if (zero(values[0]) || zero(values[1]) || zero(values[2])) {
-                System.out.println("Side of the triangle cannot be equal to zero!");
-                System.exit(1);
-            } else if (values[0] < 0 || values[1] < 0 || values[2] < 0) {
-                System.out.println("Side of the triangle cannot be less than zero!");
-                System.exit(1);
-            } else if (values[0] + values[1] < values[2] || values[0] + values[2] < values[1] || values[1] + values[2] < values[0]) {
-                System.out.println("Triangle with such sides does not exist!");
-                System.exit(1);
-            }
-        } catch (Exception ex) {
-            System.out.println("You entered not a number. Please, enter number");
-            System.exit(1);
-        }
-        return values;
-    }
-
-    /**
-     * Method return true if "a" equal to zero
-     * @param a number to check the vanishing
-     */
-    private static boolean zero (double a) {
-        return Double.isNaN(0/a);
     }
 }
